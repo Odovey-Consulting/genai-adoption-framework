@@ -5,8 +5,8 @@ This document enumerates the capabilities that a gateway layer must provide. Eac
 | Stage | Label | Description |
 |-------|-------|-------------|
 | 1 | **Foundation** | Must exist before any production workload sends traffic through the gateway. |
-| 2 | **Scaling** | Required once more than a handful of teams are consuming models. |
-| 3 | **Optimization** | Enables cost efficiency, advanced governance, and self-service at organizational scale. |
+| 2 | **Operational** | Required once more than a handful of teams are consuming models. |
+| 3 | **Optimized** | Enables cost efficiency, advanced governance, and self-service at organizational scale. |
 
 ---
 
@@ -76,7 +76,7 @@ This document enumerates the capabilities that a gateway layer must provide. Eac
 
 **Why required:** Cost overruns are the most common operational incident in early generative-AI adoption. Post-hoc billing reconciliation is too slow; enforcement must be synchronous and automatic.
 
-**Maturity stage:** Scaling
+**Maturity stage:** Operational
 
 ---
 
@@ -86,7 +86,7 @@ This document enumerates the capabilities that a gateway layer must provide. Eac
 
 **Why required:** Rate limiting prevents a single team or runaway workload from exhausting shared provider quotas, ensures fair resource distribution, and protects the gateway itself from overload.
 
-**Maturity stage:** Scaling
+**Maturity stage:** Operational
 
 ---
 
@@ -96,7 +96,7 @@ This document enumerates the capabilities that a gateway layer must provide. Eac
 
 **Why required:** This is the primary technical control preventing regulated or sensitive data from leaving the organization's boundary. It operationalizes the data-classification policies defined in the governance layer.
 
-**Maturity stage:** Scaling
+**Maturity stage:** Operational
 
 ---
 
@@ -106,7 +106,7 @@ This document enumerates the capabilities that a gateway layer must provide. Eac
 
 **Why required:** Model outputs are non-deterministic and may produce content that violates organizational policy, regulatory requirements, or brand guidelines. Gateway-level enforcement ensures that no workload — regardless of how it is built — can surface prohibited content to end users.
 
-**Maturity stage:** Scaling
+**Maturity stage:** Operational
 
 ---
 
@@ -116,7 +116,7 @@ This document enumerates the capabilities that a gateway layer must provide. Eac
 
 **Why required:** Without a safe testing surface, teams experiment in production — increasing cost, risk, and troubleshooting difficulty. The playground accelerates model evaluation and prompt engineering while keeping all traffic within the governed gateway path.
 
-**Maturity stage:** Optimization
+**Maturity stage:** Optimized
 
 ---
 
@@ -136,4 +136,4 @@ This document enumerates the capabilities that a gateway layer must provide. Eac
 
 **Why required:** Dashboards convert raw log data into actionable insight. They enable capacity planning, anomaly detection, executive reporting, and self-service troubleshooting by consuming teams. Without them, the platform team becomes a bottleneck for every "how much are we spending?" question.
 
-**Maturity stage:** Optimization
+**Maturity stage:** Optimized

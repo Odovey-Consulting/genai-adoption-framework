@@ -103,4 +103,4 @@ Each framework layer contributes specific mitigation capabilities. The table bel
 4. Verify that the responsible layer has implemented the corresponding mitigation control at or above the organization's current maturity stage.
 5. For risks scored as high-likelihood or critical-impact, verify that both the primary and secondary layers have active mitigations.
 6. Record residual risks, those that remain after all implemented mitigations, in the governance risk register.
-7. Review the risk register at a cadence appropriate to your maturity stage: quarterly at crawl, monthly at walk, continuously at run.
+7. Review the risk register at a cadence appropriate to your maturity stage: quarterly at Foundation, monthly at Operational, continuously at Optimized.

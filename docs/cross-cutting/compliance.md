@@ -109,4 +109,4 @@ Each layer should produce evidence artifacts that map directly to compliance obl
 | Layer 4: Workloads | Evaluation pipeline results, bias and fairness test reports, human review decision logs, output validation records |
 | Layer 5: Agent Security | Permission boundary audit logs, agent action traces, delegation chain records, adversarial test results, tool access logs |
 
-Automate evidence collection from the crawl stage onward. Manual evidence gathering does not scale, introduces inconsistency, and delays audit cycles. Each layer's operational tooling should export compliance-relevant data in a structured, queryable format.
+Automate evidence collection from the Foundation stage onward. Manual evidence gathering does not scale, introduces inconsistency, and delays audit cycles. Each layer's operational tooling should export compliance-relevant data in a structured, queryable format.

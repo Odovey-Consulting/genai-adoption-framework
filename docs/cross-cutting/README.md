@@ -10,7 +10,7 @@ Cross-cutting concerns are separated from the layer documentation for three reas
 
 1. **They span all five layers.** Attempting to document them within a single layer creates blind spots. A risk that originates in Layer 4 (Workloads) may only be detectable through Layer 3 (Operations) and only governable through Layer 1 (Governance). Placing the full risk taxonomy in any one layer misrepresents where responsibility lives.
 
-2. **They span all three maturity stages.** An organization at the crawl stage still carries compliance obligations. A team at the run stage still faces tradeoffs between security and velocity. Maturity changes the sophistication of the response, not whether the concern applies.
+2. **They span all three maturity stages.** An organization at the Foundation stage still carries compliance obligations. A team at the Optimized stage still faces tradeoffs between security and velocity. Maturity changes the sophistication of the response, not whether the concern applies.
 
 3. **They require coordination across team boundaries.** Platform teams, workload teams, security teams, and executive sponsors all hold a piece of each cross-cutting concern. No single owner can resolve them unilaterally.
 

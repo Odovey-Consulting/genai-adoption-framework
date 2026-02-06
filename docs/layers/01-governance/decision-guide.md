@@ -3,7 +3,7 @@
 > **Layer:** 01 — Governance
 > **Purpose:** Provide structured analysis for the major governance decisions organizations must make when adopting generative AI. Each decision includes context, options, evaluation criteria, and tradeoffs.
 
-These decisions are not one-time choices. Each should be revisited as the organization matures through Crawl, Walk, and Run stages. The principle of [Governance Is a Living Process](principles.md#4-governance-is-a-living-process) applies directly here.
+These decisions are not one-time choices. Each should be revisited as the organization matures through Foundation, Operational, and Optimized stages. The principle of [Governance Is a Living Process](principles.md#4-governance-is-a-living-process) applies directly here.
 
 ---
 
@@ -26,12 +26,12 @@ These decisions are not one-time choices. Each should be revisited as the organi
 | Speed to implement | Fast — minimal decisions | Moderate — requires definitions | Depends on existing scheme maturity |
 | Precision of control | Low — blunt instrument | High — proportionate controls | Matches current enterprise precision |
 | Team adoption friction | Low — easy to understand | Moderate — requires training | Low — teams already know the labels |
-| Scalability to Run stage | Poor — will need expansion | Good — covers most scenarios | Good — integrated with enterprise tooling |
+| Scalability to Optimized stage | Poor — will need expansion | Good — covers most scenarios | Good — integrated with enterprise tooling |
 | Alignment with compliance | Weak — regulators expect granularity | Strong — maps well to regulatory tiers | Strong — already vetted by compliance |
 
 ### Tradeoffs
 
-A two-tier scheme is the fastest to deploy and easiest to understand, making it suitable for organizations in the Crawl stage with limited use cases. However, it forces a binary decision that either over-restricts internal data (treating it the same as restricted data) or under-protects confidential data (treating it the same as public data). Most organizations will need to expand beyond two tiers before entering the Walk stage.
+A two-tier scheme is the fastest to deploy and easiest to understand, making it suitable for organizations in the Foundation stage with limited use cases. However, it forces a binary decision that either over-restricts internal data (treating it the same as restricted data) or under-protects confidential data (treating it the same as public data). Most organizations will need to expand beyond two tiers before entering the Operational stage.
 
 A four-tier scheme provides the granularity needed for proportionate controls but requires more upfront effort to define tier boundaries, train teams, and configure gateway routing rules. If the organization does not have an existing classification culture, introducing four tiers simultaneously with generative-AI adoption creates a compound change-management challenge.
 
@@ -61,18 +61,18 @@ Matching the existing enterprise scheme is the recommended default when a mature
 | Speed of approval | Slow — single bottleneck | Fast — distributed decision-making | Moderate — pre-approved is instant, additions take time |
 | Governance overhead | High on central team | Low centrally, high in aggregate | Balanced — central team manages catalog, teams manage extensions |
 | Risk of ungoverned models | Low | High — standards may diverge | Moderate — bounded by parameters |
-| Suitability for Crawl | Good — few models, low volume | Poor — overhead without benefit | Poor — unnecessary complexity |
-| Suitability for Run | Poor — bottleneck at scale | Moderate — if criteria are rigorous | Good — scales with guardrails |
+| Suitability for Foundation | Good — few models, low volume | Poor — overhead without benefit | Poor — unnecessary complexity |
+| Suitability for Optimized | Poor — bottleneck at scale | Moderate — if criteria are rigorous | Good — scales with guardrails |
 
 ### Tradeoffs
 
-Centralized approval provides the strongest consistency and simplest audit trail. It works well during Crawl and early Walk when the model catalog is small and the approval volume is manageable. It becomes a bottleneck during Run when dozens of teams have diverse model requirements and the central body cannot evaluate requests quickly enough.
+Centralized approval provides the strongest consistency and simplest audit trail. It works well during Foundation and early Operational stages when the model catalog is small and the approval volume is manageable. It becomes a bottleneck during the Optimized stage when dozens of teams have diverse model requirements and the central body cannot evaluate requests quickly enough.
 
-Federated approval maximizes team autonomy and speed but risks inconsistent evaluation standards, duplicated effort, and models entering production without adequate security or compliance review. It requires mature teams with strong governance discipline—a condition rarely met at Crawl or early Walk.
+Federated approval maximizes team autonomy and speed but risks inconsistent evaluation standards, duplicated effort, and models entering production without adequate security or compliance review. It requires mature teams with strong governance discipline—a condition rarely met at Foundation or early Operational stages.
 
 The hybrid model balances consistency with agility. The central body curates a pre-approved catalog that covers the majority of use cases; teams can select from this catalog without additional approval. For models outside the catalog, teams submit an evaluation request that the central body processes against published criteria. This model scales better than pure centralization while maintaining stronger guardrails than pure federation.
 
-**Recommendation:** Start centralized during Crawl. Transition to hybrid during Walk as the catalog stabilizes and team maturity increases.
+**Recommendation:** Start centralized during the Foundation stage. Transition to hybrid during the Operational stage as the catalog stabilizes and team maturity increases.
 
 ---
 
@@ -138,7 +138,7 @@ Division-specific AUPs maximize regulatory fit but create fragmentation: shared 
 
 The layered approach provides the best balance for most organizations. The base AUP establishes universal principles and minimum standards (aligning with the [governance principles](principles.md)). Divisions add supplementary rules that address their specific regulatory, contractual, or risk requirements. Critically, divisions may add restrictions but may not relax the base standards, preserving a consistent floor of governance.
 
-**Recommendation:** Use the layered approach. Start with an organization-wide base AUP during Crawl. Allow divisions to add supplementary rules during Walk as adoption diversifies across business contexts.
+**Recommendation:** Use the layered approach. Start with an organization-wide base AUP during the Foundation stage. Allow divisions to add supplementary rules during the Operational stage as adoption diversifies across business contexts.
 
 ---
 
@@ -161,17 +161,17 @@ The layered approach provides the best balance for most organizations. The base 
 |-----------|---------|-----------|-----------------|----------------------|
 | Responsiveness | High | Low — up to 3-month wait | High — immediate | High — no longer than 3 months between reviews |
 | Board member burden | High — 12 meetings/year | Low — 4 meetings/year | Variable — unpredictable | Moderate — 4 scheduled + ad hoc |
-| Suitability for Crawl | Good — frequent check-ins | Too slow for early learning | Good — but may be too reactive | Good |
-| Suitability for Run | Excessive if most items are routine | Too slow for high-volume programs | Chaotic at scale | Good — routine in quarterly, exceptions as needed |
+| Suitability for Foundation | Good — frequent check-ins | Too slow for early learning | Good — but may be too reactive | Good |
+| Suitability for Optimized | Excessive if most items are routine | Too slow for high-volume programs | Chaotic at scale | Good — routine in quarterly, exceptions as needed |
 
 ### Tradeoffs
 
-Monthly cadence provides high responsiveness and works well during Crawl and early Walk when decisions are frequent and the governance process is still being refined. As the program matures, monthly meetings may lack sufficient agenda items, leading to performative meetings that waste board members' time.
+Monthly cadence provides high responsiveness and works well during Foundation and early Operational stages when decisions are frequent and the governance process is still being refined. As the program matures, monthly meetings may lack sufficient agenda items, leading to performative meetings that waste board members' time.
 
-Quarterly cadence is appropriate for mature programs where routine approvals are delegated and the board focuses on strategic direction, policy updates, and exception review. It is too slow during Crawl when the volume of first-time decisions is high and teams cannot wait three months for approval.
+Quarterly cadence is appropriate for mature programs where routine approvals are delegated and the board focuses on strategic direction, policy updates, and exception review. It is too slow during the Foundation stage when the volume of first-time decisions is high and teams cannot wait three months for approval.
 
 Event-triggered cadence is maximally responsive but creates unpredictable scheduling, makes it difficult to maintain board engagement, and risks important-but-not-urgent items (like policy reviews) being perpetually deferred because no event triggers them.
 
 The combined quarterly-plus-event-triggered model offers the best balance: strategic reviews and policy updates happen on a predictable quarterly schedule, while urgent items (incidents, time-sensitive use cases, regulatory changes) trigger ad-hoc sessions with a defined convening protocol.
 
-**Recommendation:** Start monthly during Crawl. Transition to quarterly-plus-event-triggered during Walk once the review board has established its processes and routine approvals are delegated to standing criteria.
+**Recommendation:** Start monthly during the Foundation stage. Transition to quarterly-plus-event-triggered during the Operational stage once the review board has established its processes and routine approvals are delegated to standing criteria.

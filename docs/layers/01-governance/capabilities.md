@@ -3,7 +3,7 @@
 > **Layer:** 01 — Governance
 > **Purpose:** Enumerate the capabilities an organization must build or acquire to operate a governed generative-AI practice. Each capability is mapped to the maturity stage at which it becomes critical.
 
-Capabilities are grouped by functional area. For each capability, the entry specifies what it is, why it is required, and the maturity stage at which the organization cannot proceed without it. Maturity stages referenced throughout are: **Crawl** (initial pilots), **Walk** (scaling across teams), **Run** (enterprise-wide, production-grade operations).
+Capabilities are grouped by functional area. For each capability, the entry specifies what it is, why it is required, and the maturity stage at which the organization cannot proceed without it. Maturity stages referenced throughout are: **Foundation** (initial pilots), **Operational** (scaling across teams), **Optimized** (enterprise-wide, production-grade operations).
 
 ---
 
@@ -15,7 +15,7 @@ Capabilities are grouped by functional area. For each capability, the entry spec
 
 **Why it is required:** Without a clearly articulated AUP, individual teams define their own rules—or operate with none. The AUP serves as the single authoritative source that legal, compliance, security, and engineering teams reference when evaluating whether a use case is permissible. It also provides the contractual basis for enforcement.
 
-**Critical maturity stage:** **Crawl.** The AUP must exist before the first pilot enters development. Even a minimal, one-page AUP is better than none. The policy grows in specificity as the organization moves through Walk and Run.
+**Critical maturity stage:** **Foundation.** The AUP must exist before the first pilot enters development. Even a minimal, one-page AUP is better than none. The policy grows in specificity as the organization moves through the Operational and Optimized stages.
 
 **Key outputs:** Published AUP document, acknowledgment tracking per employee or team, distribution mechanism (intranet, onboarding flow, or integrated developer portal).
 
@@ -27,7 +27,7 @@ Capabilities are grouped by functional area. For each capability, the entry spec
 
 **Why it is required:** Rigid policies without an escape valve drive teams to work around governance entirely. An exemption process channels edge cases through a structured review, ensuring risks are evaluated while preserving the integrity of the broader policy framework. Exemption data also signals where policies need updating.
 
-**Critical maturity stage:** **Walk.** During Crawl, the limited number of use cases can be handled directly by the review board. As adoption scales in Walk, the volume and diversity of use cases demand a self-service exemption pathway.
+**Critical maturity stage:** **Operational.** During the Foundation stage, the limited number of use cases can be handled directly by the review board. As adoption scales in the Operational stage, the volume and diversity of use cases demand a self-service exemption pathway.
 
 **Key outputs:** Exemption request form, decision log with rationale, time-bound approval records, metrics on exemption volume and disposition.
 
@@ -41,7 +41,7 @@ Capabilities are grouped by functional area. For each capability, the entry spec
 
 **Why it is required:** Classification is the mechanism that translates abstract risk tolerance into concrete, enforceable controls. It enables the gateway layer to route requests appropriately, allows security teams to set differential monitoring thresholds, and gives development teams clear guidance on what data they can use in prompts, fine-tuning, or retrieval-augmented generation pipelines.
 
-**Critical maturity stage:** **Crawl.** Even a two-tier scheme (sensitive / non-sensitive) is required before the first model endpoint is provisioned. The scheme should be refined to three or four tiers during Walk. See the [Decision Guide](decision-guide.md) for tier-count considerations.
+**Critical maturity stage:** **Foundation.** Even a two-tier scheme (sensitive / non-sensitive) is required before the first model endpoint is provisioned. The scheme should be refined to three or four tiers during the Operational stage. See the [Decision Guide](decision-guide.md) for tier-count considerations.
 
 **Key outputs:** Classification tier definitions, labeling standards, handling-rule matrix (tier vs. permitted model deployment pattern), integration points with existing enterprise data-governance tooling.
 
@@ -55,7 +55,7 @@ Capabilities are grouped by functional area. For each capability, the entry spec
 
 **Why it is required:** Without a catalog, teams independently evaluate and adopt models, leading to redundant spending, inconsistent security postures, and ungoverned data flows. The catalog provides a curated "menu" that balances choice with control. The approval process ensures new models are vetted against security, privacy, cost, and quality criteria before entering the catalog.
 
-**Critical maturity stage:** **Crawl.** The initial catalog may contain only one or two approved models. The approval process formalizes during Walk to handle the growing volume of model evaluation requests.
+**Critical maturity stage:** **Foundation.** The initial catalog may contain only one or two approved models. The approval process formalizes during the Operational stage to handle the growing volume of model evaluation requests.
 
 **Key outputs:** Model registry (name, version, deployment pattern, approved tiers, cost baseline, owner), approval workflow definition, evaluation criteria checklist, retirement and deprecation procedures.
 
@@ -67,7 +67,7 @@ Capabilities are grouped by functional area. For each capability, the entry spec
 
 **Why it is required:** Use case review is the primary mechanism for applying governance principles to real work. It ensures that every deployment is evaluated against the AUP, classification scheme, and human-oversight requirements before resources are committed. It also creates the registry that enables portfolio-level visibility into how generative AI is being used across the organization.
 
-**Critical maturity stage:** **Crawl.** The review process may be informal (a single meeting with the review board) during Crawl. It must formalize into a repeatable workflow with templates and SLAs during Walk.
+**Critical maturity stage:** **Foundation.** The review process may be informal (a single meeting with the review board) during the Foundation stage. It must formalize into a repeatable workflow with templates and SLAs during the Operational stage.
 
 **Key outputs:** Use case proposal template, review checklist, approval/rejection decision log, use case registry with owner and status tracking.
 
@@ -81,7 +81,7 @@ Capabilities are grouped by functional area. For each capability, the entry spec
 
 **Why it is required:** Generative-AI cost structures—typically usage-based and driven by token volume—are unfamiliar to most enterprise budgeting processes. Without cost governance, a single poorly optimized pipeline can consume a quarter's budget in days. The framework provides visibility and control before spending becomes a crisis.
 
-**Critical maturity stage:** **Walk.** During Crawl, spending is typically small enough to manage informally. As teams scale in Walk, consumption-based costs grow non-linearly, and the organization needs formal budgets, alerts, and accountability. See the [Decision Guide](decision-guide.md) for cap-style decisions.
+**Critical maturity stage:** **Operational.** During the Foundation stage, spending is typically small enough to manage informally. As teams scale in the Operational stage, consumption-based costs grow non-linearly, and the organization needs formal budgets, alerts, and accountability. See the [Decision Guide](decision-guide.md) for cap-style decisions.
 
 **Key outputs:** Budget allocation model, chargeback/showback reporting, consumption dashboards, alert thresholds, escalation procedures for budget overruns.
 
@@ -95,7 +95,7 @@ Capabilities are grouped by functional area. For each capability, the entry spec
 
 **Why it is required:** Governance decisions require input from multiple disciplines—legal, security, engineering, product, finance, and business leadership. Without a formal board, decisions are made in silos or not at all. The fixed cadence ensures governance does not become a bottleneck while still maintaining rigor.
 
-**Critical maturity stage:** **Crawl.** The board may meet ad hoc during very early exploration, but a fixed cadence (at least monthly) must be established before the first use case enters production. During Run, the board shifts toward exception handling and strategic direction as routine approvals become streamlined.
+**Critical maturity stage:** **Foundation.** The board may meet ad hoc during very early exploration, but a fixed cadence (at least monthly) must be established before the first use case enters production. During the Optimized stage, the board shifts toward exception handling and strategic direction as routine approvals become streamlined.
 
 **Key outputs:** Board charter, membership roster, meeting cadence, decision log, published meeting minutes or summaries, escalation matrix.
 
@@ -107,7 +107,7 @@ Capabilities are grouped by functional area. For each capability, the entry spec
 
 **Why it is required:** Generative-AI systems introduce novel failure modes—hallucinations, prompt injection, unintended data exposure—that existing incident-response playbooks may not cover. A dedicated reporting and escalation procedure ensures these incidents are captured, categorized, and resolved with the urgency and expertise they require.
 
-**Critical maturity stage:** **Walk.** During Crawl, incidents can be handled through existing channels with ad-hoc escalation. As production use cases multiply in Walk, dedicated procedures become essential to prevent incidents from falling through the cracks of general IT incident management.
+**Critical maturity stage:** **Operational.** During the Foundation stage, incidents can be handled through existing channels with ad-hoc escalation. As production use cases multiply in the Operational stage, dedicated procedures become essential to prevent incidents from falling through the cracks of general IT incident management.
 
 **Key outputs:** Incident taxonomy (generative-AI-specific categories), reporting channel and template, severity classification matrix, escalation paths with response-time SLAs, post-incident review process.
 
@@ -121,6 +121,6 @@ Capabilities are grouped by functional area. For each capability, the entry spec
 
 **Why it is required:** The regulatory landscape for AI is evolving rapidly across multiple jurisdictions. Organizations that do not actively track applicable regulations risk non-compliance, fines, and reputational damage. Regulatory mapping also informs the AUP, classification scheme, and use case review criteria, ensuring they remain aligned with external requirements.
 
-**Critical maturity stage:** **Walk.** During Crawl, a basic regulatory scan is sufficient. As the organization scales in Walk and use cases touch more jurisdictions and data types, a structured compliance-tracking capability becomes essential. During Run, this capability should integrate with enterprise-wide compliance and risk-management functions.
+**Critical maturity stage:** **Operational.** During the Foundation stage, a basic regulatory scan is sufficient. As the organization scales in the Operational stage and use cases touch more jurisdictions and data types, a structured compliance-tracking capability becomes essential. During the Optimized stage, this capability should integrate with enterprise-wide compliance and risk-management functions.
 
 **Key outputs:** Regulatory requirements inventory, mapping of requirements to governance controls, gap analysis, compliance attestation schedule, regulatory change monitoring process.

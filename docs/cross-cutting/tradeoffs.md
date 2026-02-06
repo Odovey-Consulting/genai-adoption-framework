@@ -40,9 +40,9 @@ Frameworks create the illusion that all good things are simultaneously achievabl
 
 ## 4. Speed-to-Market vs. Governance Maturity
 
-**The tension.** The framework defines three maturity stages: crawl, walk, run. Full governance maturity takes time, often twelve to eighteen months for complex organizations. Competitive pressure demands AI capabilities now. Waiting for full maturity before deploying means competitors ship first. Shipping without governance means accumulating risk debt that compounds.
+**The tension.** The framework defines three maturity stages: Foundation, Operational, Optimized. Full governance maturity takes time, often twelve to eighteen months for complex organizations. Competitive pressure demands AI capabilities now. Waiting for full maturity before deploying means competitors ship first. Shipping without governance means accumulating risk debt that compounds.
 
-**When to prioritize speed.** When the competitive landscape demands AI capabilities and delay creates existential risk. When the initial workloads are low-risk (internal tooling, developer productivity) and can be deployed with minimal governance. When crawl-stage governance (acceptable use policy, basic gateway, usage logging) can be stood up in weeks, not months, and is sufficient for initial workloads.
+**When to prioritize speed.** When the competitive landscape demands AI capabilities and delay creates existential risk. When the initial workloads are low-risk (internal tooling, developer productivity) and can be deployed with minimal governance. When Foundation-stage governance (acceptable use policy, basic gateway, usage logging) can be stood up in weeks, not months, and is sufficient for initial workloads.
 
 **When to prioritize governance maturity.** When initial workloads involve customer-facing AI, sensitive data, or regulated activities. When the organization has experienced an AI-related incident and needs to restore trust. When regulatory timelines create hard deadlines for compliance. When the volume of planned workloads is high enough that governance debt will become unmanageable within months.
 

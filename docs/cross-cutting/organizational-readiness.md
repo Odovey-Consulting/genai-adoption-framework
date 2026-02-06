@@ -12,7 +12,7 @@ Four organizational functions own the framework's implementation. Their boundari
 
 The platform team builds and operates the shared infrastructure that all AI workloads depend on. This includes the gateway that routes and controls model access, the operational tooling that provides observability and cost management, and the technical implementation of governance policies. The platform team does not build AI applications; it builds the platform that makes AI applications safe, observable, and governable.
 
-At crawl maturity, the platform team may be two to three engineers with part-time allocation. At run maturity, this is a dedicated team of six to twelve engineers with specialized roles in gateway engineering, observability, and infrastructure automation.
+At Foundation maturity, the platform team may be two to three engineers with part-time allocation. At Optimized maturity, this is a dedicated team of six to twelve engineers with specialized roles in gateway engineering, observability, and infrastructure automation.
 
 ### AI Center of Excellence (CoE)
 
@@ -20,7 +20,7 @@ At crawl maturity, the platform team may be two to three engineers with part-tim
 
 The CoE is not a delivery team. It does not build workloads or operate infrastructure. It defines standards, curates best practices, conducts training, facilitates knowledge sharing across workload teams, and maintains the framework itself. The CoE serves as the connective tissue between the platform team, workload teams, and security team.
 
-At crawl maturity, the CoE may be a single senior practitioner who sets initial standards and conducts knowledge-sharing sessions. At run maturity, it includes dedicated roles for AI ethics review, evaluation methodology, prompt engineering standards, and training program management.
+At Foundation maturity, the CoE may be a single senior practitioner who sets initial standards and conducts knowledge-sharing sessions. At Optimized maturity, it includes dedicated roles for AI ethics review, evaluation methodology, prompt engineering standards, and training program management.
 
 ### Workload Teams
 
@@ -28,7 +28,7 @@ At crawl maturity, the CoE may be a single senior practitioner who sets initial 
 
 Workload teams are the application developers who build AI-powered features and products. Each workload team owns their application's prompt engineering, evaluation pipelines, output validation, human-in-the-loop workflows, and retrieval-augmented generation configurations. Workload teams consume the platform that Layers 1 through 3 provide and conform to the standards that the CoE defines.
 
-The number of workload teams scales with the number of AI applications. At crawl maturity, one or two pilot teams build the first workloads. At run maturity, dozens of workload teams operate independently within the guardrails that the platform provides.
+The number of workload teams scales with the number of AI applications. At Foundation maturity, one or two pilot teams build the first workloads. At Optimized maturity, dozens of workload teams operate independently within the guardrails that the platform provides.
 
 ### Security Team
 
@@ -36,7 +36,7 @@ The number of workload teams scales with the number of AI applications. At crawl
 
 The security team extends existing security practices to cover generative AI-specific threats. This includes prompt injection defense, agent permission boundary enforcement, adversarial testing, credential management for model integrations, and security monitoring for AI-specific attack patterns. The security team works closely with the platform team on Layer 3 operational security and with the CoE on security training.
 
-At crawl maturity, AI security is a part-time responsibility within the existing security team. At run maturity, dedicated AI security engineers focus full-time on agent security, adversarial testing, and AI-specific threat modeling.
+At Foundation maturity, AI security is a part-time responsibility within the existing security team. At Optimized maturity, dedicated AI security engineers focus full-time on agent security, adversarial testing, and AI-specific threat modeling.
 
 ## Skills Assessment Matrix
 
@@ -44,23 +44,23 @@ Each team requires a distinct skill set. The table below identifies core skills,
 
 | Skill | Platform Team | CoE | Workload Teams | Security Team | Required From |
 |---|---|---|---|---|---|
-| API gateway design and operation | Expert | Awareness | Awareness | Intermediate | Crawl |
-| Model API integration patterns | Expert | Expert | Expert | Intermediate | Crawl |
-| Prompt engineering | Intermediate | Expert | Expert | Intermediate | Crawl |
-| Evaluation and benchmarking | Intermediate | Expert | Expert | Intermediate | Walk |
-| Retrieval-augmented generation | Intermediate | Expert | Expert | Awareness | Walk |
-| Observability and monitoring | Expert | Intermediate | Intermediate | Intermediate | Crawl |
-| Cost modeling and optimization | Expert | Intermediate | Awareness | Awareness | Walk |
-| Data classification and handling | Intermediate | Expert | Intermediate | Expert | Crawl |
-| AI-specific threat modeling | Awareness | Intermediate | Awareness | Expert | Crawl |
-| Prompt injection defense | Intermediate | Intermediate | Intermediate | Expert | Walk |
-| Agent framework architecture | Expert | Expert | Expert | Expert | Walk |
-| Agent permission design | Intermediate | Expert | Intermediate | Expert | Walk |
-| Adversarial testing | Awareness | Intermediate | Intermediate | Expert | Walk |
-| Fine-tuning and model customization | Intermediate | Expert | Intermediate | Awareness | Run |
-| AI ethics and bias assessment | Awareness | Expert | Intermediate | Awareness | Walk |
-| Regulatory and compliance mapping | Awareness | Expert | Awareness | Intermediate | Crawl |
-| Change management | Awareness | Expert | Awareness | Awareness | Crawl |
+| API gateway design and operation | Expert | Awareness | Awareness | Intermediate | Foundation |
+| Model API integration patterns | Expert | Expert | Expert | Intermediate | Foundation |
+| Prompt engineering | Intermediate | Expert | Expert | Intermediate | Foundation |
+| Evaluation and benchmarking | Intermediate | Expert | Expert | Intermediate | Operational |
+| Retrieval-augmented generation | Intermediate | Expert | Expert | Awareness | Operational |
+| Observability and monitoring | Expert | Intermediate | Intermediate | Intermediate | Foundation |
+| Cost modeling and optimization | Expert | Intermediate | Awareness | Awareness | Operational |
+| Data classification and handling | Intermediate | Expert | Intermediate | Expert | Foundation |
+| AI-specific threat modeling | Awareness | Intermediate | Awareness | Expert | Foundation |
+| Prompt injection defense | Intermediate | Intermediate | Intermediate | Expert | Operational |
+| Agent framework architecture | Expert | Expert | Expert | Expert | Operational |
+| Agent permission design | Intermediate | Expert | Intermediate | Expert | Operational |
+| Adversarial testing | Awareness | Intermediate | Intermediate | Expert | Operational |
+| Fine-tuning and model customization | Intermediate | Expert | Intermediate | Awareness | Optimized |
+| AI ethics and bias assessment | Awareness | Expert | Intermediate | Awareness | Operational |
+| Regulatory and compliance mapping | Awareness | Expert | Awareness | Intermediate | Foundation |
+| Change management | Awareness | Expert | Awareness | Awareness | Foundation |
 
 Proficiency levels: **Expert** means the team can design, implement, and troubleshoot independently. **Intermediate** means the team can implement with guidance and participate in design decisions. **Awareness** means the team understands the concepts sufficiently to collaborate with experts and identify when the skill is needed.
 
@@ -125,7 +125,7 @@ Executive leadership must provide certain things directly and can delegate other
 
 Team size and structure should match the organization's maturity stage. Premature scaling creates overhead. Delayed scaling creates bottlenecks.
 
-| Function | Crawl | Walk | Run |
+| Function | Foundation | Operational | Optimized |
 |---|---|---|---|
 | Platform Team | 2-3 engineers (part-time OK) | 4-6 dedicated engineers | 8-12 engineers with specialized roles |
 | CoE | 1 senior practitioner (part-time OK) | 2-3 dedicated practitioners | 4-6 practitioners with specialized roles |

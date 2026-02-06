@@ -84,7 +84,7 @@ Responsible AI principles are easy to state and difficult to operationalize. Mos
 
 **Concrete controls.**
 
-- Customer-facing outputs in high-risk categories require human review before delivery at crawl and walk maturity stages.
+- Customer-facing outputs in high-risk categories require human review before delivery at Foundation and Operational maturity stages.
 - The gateway supports immediate traffic suspension to any model endpoint without requiring application deployment.
 - Operations alerting includes thresholds that automatically route outputs to human review when anomaly scores exceed configured limits.
 - Agent systems require explicit human approval for actions classified as irreversible or high-impact (financial transactions, data deletion, external communications).
