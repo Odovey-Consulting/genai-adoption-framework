@@ -1,0 +1,25 @@
+flowchart BT
+    L1["<b>Layer 1: Governance</b>\nPolicies &amp; Standards"]
+    L2["<b>Layer 2: Gateway</b>\nEnforcement &amp; Routing"]
+    L3["<b>Layer 3: Operations</b>\nMonitoring &amp; Platform"]
+    L4["<b>Layer 4: Workloads</b>\nApplications &amp; Patterns"]
+    L5["<b>Layer 5: Agent Security</b>\nAutonomous Controls"]
+
+    L1 -->|"Defines rules &amp;\npolicies"| L2
+    L2 -->|"Provides filtered data\n&amp; access logs"| L3
+    L3 -->|"Provides managed\nplatform &amp; tooling"| L4
+    L4 -->|"Establishes execution\ncontext &amp; boundaries"| L5
+
+    L2 -.->|"Reports policy\nviolations"| L1
+    L3 -.->|"Feeds metrics to\nrefine controls"| L2
+    L4 -.->|"Sends telemetry\nfor monitoring"| L3
+    L5 -.->|"Surfaces agent actions\nfor oversight"| L4
+
+    style L1 fill:#1a5276,stroke:#154360,color:#fff,stroke-width:2px
+    style L2 fill:#1f618d,stroke:#1a5276,color:#fff,stroke-width:2px
+    style L3 fill:#2471a3,stroke:#1f618d,color:#fff,stroke-width:2px
+    style L4 fill:#2980b9,stroke:#2471a3,color:#fff,stroke-width:2px
+    style L5 fill:#2e86c1,stroke:#2980b9,color:#fff,stroke-width:2px
+
+    linkStyle 0,1,2,3 stroke:#2c3e50,stroke-width:2px
+    linkStyle 4,5,6,7 stroke:#7f8c8d,stroke-width:1px,stroke-dasharray:5

@@ -1,0 +1,61 @@
+flowchart LR
+    subgraph S1["<b>Stage 1: Foundation</b>"]
+        direction BT
+        S1L1["Layer 1: Governance\n<i>PRIMARY</i>"]
+        S1L2["Layer 2: Gateway\n<i>PRIMARY</i>"]
+        S1L3["Layer 3: Operations\n<i>MINIMAL</i>"]
+        S1L4["Layer 4: Workloads\n "]
+        S1L5["Layer 5: Agent Security\n "]
+
+        S1L1 --- S1L2 --- S1L3 --- S1L4 --- S1L5
+    end
+
+    subgraph S2["<b>Stage 2: Operational</b>"]
+        direction BT
+        S2L1["Layer 1: Governance\n<i>ESTABLISHED</i>"]
+        S2L2["Layer 2: Gateway\n<i>ESTABLISHED</i>"]
+        S2L3["Layer 3: Operations\n<i>MATURING</i>"]
+        S2L4["Layer 4: Workloads\n<i>ACTIVE</i>"]
+        S2L5["Layer 5: Agent Security\n<i>BEGINNING</i>"]
+
+        S2L1 --- S2L2 --- S2L3 --- S2L4 --- S2L5
+    end
+
+    subgraph S3["<b>Stage 3: Optimized</b>"]
+        direction BT
+        S3L1["Layer 1: Governance\n<i>OPTIMIZED</i>"]
+        S3L2["Layer 2: Gateway\n<i>OPTIMIZED</i>"]
+        S3L3["Layer 3: Operations\n<i>OPTIMIZED</i>"]
+        S3L4["Layer 4: Workloads\n<i>OPTIMIZED</i>"]
+        S3L5["Layer 5: Agent Security\n<i>OPTIMIZED</i>"]
+
+        S3L1 --- S3L2 --- S3L3 --- S3L4 --- S3L5
+    end
+
+    S1 ==> S2 ==> S3
+
+    %% Stage 1 styles - primary layers highlighted, others dimmed
+    style S1L1 fill:#1a5276,stroke:#154360,color:#fff,stroke-width:2px
+    style S1L2 fill:#1f618d,stroke:#1a5276,color:#fff,stroke-width:2px
+    style S1L3 fill:#85929e,stroke:#7f8c8d,color:#fff,stroke-width:1px
+    style S1L4 fill:#d5d8dc,stroke:#aab7b8,color:#95a5a6,stroke-width:1px
+    style S1L5 fill:#d5d8dc,stroke:#aab7b8,color:#95a5a6,stroke-width:1px
+
+    %% Stage 2 styles - more layers active
+    style S2L1 fill:#1a5276,stroke:#154360,color:#fff,stroke-width:2px
+    style S2L2 fill:#1f618d,stroke:#1a5276,color:#fff,stroke-width:2px
+    style S2L3 fill:#2471a3,stroke:#1f618d,color:#fff,stroke-width:2px
+    style S2L4 fill:#2980b9,stroke:#2471a3,color:#fff,stroke-width:2px
+    style S2L5 fill:#85929e,stroke:#7f8c8d,color:#fff,stroke-width:1px
+
+    %% Stage 3 styles - all layers fully active
+    style S3L1 fill:#1a5276,stroke:#154360,color:#fff,stroke-width:2px
+    style S3L2 fill:#1f618d,stroke:#1a5276,color:#fff,stroke-width:2px
+    style S3L3 fill:#2471a3,stroke:#1f618d,color:#fff,stroke-width:2px
+    style S3L4 fill:#2980b9,stroke:#2471a3,color:#fff,stroke-width:2px
+    style S3L5 fill:#2e86c1,stroke:#2980b9,color:#fff,stroke-width:2px
+
+    %% Stage container styles
+    style S1 fill:#fdf2e9,stroke:#e67e22,stroke-width:2px,color:#2c3e50
+    style S2 fill:#eaf2f8,stroke:#2980b9,stroke-width:2px,color:#2c3e50
+    style S3 fill:#e8f8f5,stroke:#1abc9c,stroke-width:2px,color:#2c3e50

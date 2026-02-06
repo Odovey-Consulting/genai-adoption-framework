@@ -1,0 +1,88 @@
+graph TB
+    subgraph Air-Gapped Enclave
+        subgraph Application Layer
+            A1[Analyst Workstation]
+            A2[Mission Application]
+            A3[Agent Orchestrator]
+        end
+
+        subgraph Gateway Tier
+            GW[Model Gateway]
+            PE[Policy Engine]
+            RL[Rate Limiter]
+            CF[Content Filter]
+        end
+
+        subgraph Model Serving Layer
+            subgraph Container Orchestration Platform
+                MS1[Large Language Model Pod]
+                MS2[Embedding Model Pod]
+                MS3[Code Generation Model Pod]
+            end
+            MR[Local Model Registry]
+            HW[Inference Accelerator Pool]
+        end
+
+        subgraph Identity and Access
+            IDP[Identity Provider]
+            SM[Secret Manager]
+            RBAC[Role-Based Access Controller]
+        end
+
+        subgraph Observability Stack
+            LP[Logging Pipeline]
+            MB[Metrics Backend]
+            DB[Observability Dashboard]
+            AL[Alerting Engine]
+        end
+
+        subgraph Evaluation and Validation
+            EB[Evaluation Benchmark Suite]
+            RT[Red Team Toolkit]
+            DV[Model Drift Validator]
+        end
+
+        subgraph Supply Chain Controls
+            MI[Media Ingestion Station]
+            SC[Artifact Scanner]
+            SV[Signature Validator]
+            AR[Approved Artifact Repository]
+        end
+    end
+
+    A1 -->|Authenticated Request| GW
+    A2 -->|Authenticated Request| GW
+    A3 -->|Authenticated Request| GW
+
+    GW --> PE
+    GW --> RL
+    GW --> CF
+    GW -->|Routed Request| MS1
+    GW -->|Routed Request| MS2
+    GW -->|Routed Request| MS3
+
+    MR -.->|Model Artifacts| MS1
+    MR -.->|Model Artifacts| MS2
+    MR -.->|Model Artifacts| MS3
+    HW -.->|Compute Resources| MS1
+    HW -.->|Compute Resources| MS2
+    HW -.->|Compute Resources| MS3
+
+    IDP -.->|Token Validation| GW
+    SM -.->|Credential Retrieval| GW
+    RBAC -.->|Authorization Decisions| PE
+
+    GW -->|Structured Logs| LP
+    GW -->|Telemetry| MB
+    LP --> DB
+    MB --> DB
+    AL -.->|Alert Rules| MB
+
+    MI -->|Physical Media| SC
+    SC --> SV
+    SV -->|Validated Artifacts| AR
+    AR -->|Approved Models| MR
+
+    EB -.->|Benchmark Results| DB
+    RT -.->|Assessment Reports| DB
+    DV -.->|Drift Reports| DB

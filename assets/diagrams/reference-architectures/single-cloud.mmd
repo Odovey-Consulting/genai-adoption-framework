@@ -1,0 +1,42 @@
+graph TB
+    subgraph Application Layer
+        A1[Web Application]
+        A2[Internal Tooling]
+        A3[Agent Orchestrator]
+    end
+
+    subgraph Private Subnet - Gateway Tier
+        GW[Model Gateway]
+        PE[Policy Engine]
+        RL[Rate Limiter]
+    end
+
+    subgraph Model Endpoints
+        M1[Large Language Model Endpoint]
+        M2[Embedding Model Endpoint]
+        M3[Fine-Tuned Model Endpoint]
+    end
+
+    subgraph Supporting Services
+        IDP[Identity Provider]
+        SM[Secret Manager]
+        LP[Logging Pipeline]
+        MB[Metrics Backend]
+        CA[Cost Attribution Service]
+    end
+
+    A1 -->|Authenticated Request| GW
+    A2 -->|Authenticated Request| GW
+    A3 -->|Authenticated Request| GW
+
+    GW --> PE
+    GW --> RL
+    GW -->|Routed Request| M1
+    GW -->|Routed Request| M2
+    GW -->|Routed Request| M3
+
+    IDP -.->|Token Validation| GW
+    SM -.->|Credential Retrieval| GW
+    GW -->|Structured Logs| LP
+    GW -->|Telemetry| MB
+    GW -->|Usage Records| CA

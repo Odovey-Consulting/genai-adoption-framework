@@ -1,0 +1,65 @@
+graph TB
+    subgraph Application Layer
+        A1[Web Application]
+        A2[Internal Tooling]
+        A3[Agent Orchestrator]
+    end
+
+    subgraph Gateway Tier
+        GW[Model Gateway]
+        PE[Policy Engine]
+        DC[Data Classifier]
+        RT[Split Router]
+    end
+
+    subgraph On-Premises Environment
+        subgraph Private Model Cluster
+            OM1[Self-Hosted Large Language Model]
+            OM2[Self-Hosted Embedding Model]
+            OM3[Domain-Specific Fine-Tuned Model]
+        end
+        LR[Local Model Registry]
+        LS[Local Secret Store]
+    end
+
+    subgraph Cloud Environment
+        CM1[Cloud Language Model Endpoint]
+        CM2[Cloud Embedding Endpoint]
+        CM3[Cloud Specialized Model Endpoint]
+        CS[Cloud Secret Manager]
+    end
+
+    subgraph Unified Observability
+        LP[Logging Pipeline]
+        MB[Metrics Backend]
+        CA[Cost Attribution Service]
+        DB[Observability Dashboard]
+    end
+
+    IDP[Identity Provider]
+
+    A1 -->|Authenticated Request| GW
+    A2 -->|Authenticated Request| GW
+    A3 -->|Authenticated Request| GW
+
+    GW --> PE
+    GW --> DC
+    PE --> RT
+
+    RT -->|Sensitive Workloads| OM1
+    RT -->|Sensitive Workloads| OM2
+    RT -->|Sensitive Workloads| OM3
+    RT -->|Non-Sensitive Workloads| CM1
+    RT -->|Non-Sensitive Workloads| CM2
+    RT -->|Non-Sensitive Workloads| CM3
+
+    LR -.->|Model Versions| OM1
+    LS -.->|Credentials| RT
+    CS -.->|Credentials| RT
+    IDP -.->|Token Validation| GW
+
+    GW -->|Structured Logs| LP
+    GW -->|Telemetry| MB
+    GW -->|Usage Records| CA
+    LP --> DB
+    MB --> DB

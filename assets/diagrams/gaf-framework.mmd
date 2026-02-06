@@ -1,0 +1,39 @@
+flowchart LR
+    subgraph Layers[" "]
+        direction BT
+
+        L1["<b>Layer 1: Governance</b>\nPolicies, Standards, Data Classification,\nAccess Controls, Audit Requirements"]
+        L2["<b>Layer 2: Gateway</b>\nAPI Management, Prompt Filtering,\nData Loss Prevention, Rate Limiting"]
+        L3["<b>Layer 3: Operations</b>\nMonitoring, Logging, Cost Management,\nModel Lifecycle, Performance Tuning"]
+        L4["<b>Layer 4: Workloads</b>\nUse Case Patterns, RAG Pipelines,\nFine-Tuning, Prompt Engineering"]
+        L5["<b>Layer 5: Agent Security</b>\nTool Authorization, Guardrails,\nHuman-in-the-Loop, Scope Constraints"]
+
+        L1 --- L2 --- L3 --- L4 --- L5
+    end
+
+    subgraph Cross["Cross-Cutting Concerns"]
+        direction BT
+        CC1["Risk\nManagement"]
+        CC2["Compliance"]
+        CC3["Responsible\nAI"]
+        CC4["Organizational\nReadiness"]
+
+        CC1 --- CC2 --- CC3 --- CC4
+    end
+
+    L1 -.- CC1
+    L5 -.- CC4
+
+    style L1 fill:#1a5276,stroke:#154360,color:#fff
+    style L2 fill:#1f618d,stroke:#1a5276,color:#fff
+    style L3 fill:#2471a3,stroke:#1f618d,color:#fff
+    style L4 fill:#2980b9,stroke:#2471a3,color:#fff
+    style L5 fill:#2e86c1,stroke:#2980b9,color:#fff
+
+    style CC1 fill:#6c3483,stroke:#5b2c6f,color:#fff
+    style CC2 fill:#7d3c98,stroke:#6c3483,color:#fff
+    style CC3 fill:#8e44ad,stroke:#7d3c98,color:#fff
+    style CC4 fill:#9b59b6,stroke:#8e44ad,color:#fff
+
+    style Layers fill:#eaf2f8,stroke:#2c3e50,stroke-width:2px,color:#2c3e50
+    style Cross fill:#f4ecf7,stroke:#2c3e50,stroke-width:2px,color:#2c3e50

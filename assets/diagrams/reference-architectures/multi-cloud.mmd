@@ -1,0 +1,55 @@
+graph TB
+    subgraph Application Layer
+        A1[Web Application]
+        A2[Backend Service]
+        A3[Agent Orchestrator]
+    end
+
+    subgraph Central Gateway Tier
+        GW[Model Gateway]
+        PE[Policy Engine]
+        RT[Request Router]
+        RL[Rate Limiter]
+    end
+
+    subgraph Cloud Provider A
+        MA1[Large Language Model Endpoint A]
+        MA2[Embedding Model Endpoint A]
+    end
+
+    subgraph Cloud Provider B
+        MB1[Large Language Model Endpoint B]
+        MB2[Specialized Model Endpoint B]
+    end
+
+    subgraph Cloud Provider C
+        MC1[Fine-Tuned Model Endpoint C]
+    end
+
+    subgraph Unified Supporting Services
+        IDP[Identity Provider]
+        SM[Secret Manager]
+        LP[Unified Logging Pipeline]
+        MB_met[Metrics Backend]
+        CA[Cost Attribution Service]
+    end
+
+    A1 -->|Authenticated Request| GW
+    A2 -->|Authenticated Request| GW
+    A3 -->|Authenticated Request| GW
+
+    GW --> PE
+    GW --> RT
+    GW --> RL
+
+    RT -->|Provider A API Format| MA1
+    RT -->|Provider A API Format| MA2
+    RT -->|Provider B API Format| MB1
+    RT -->|Provider B API Format| MB2
+    RT -->|Provider C API Format| MC1
+
+    IDP -.->|Token Validation| GW
+    SM -.->|Credential Retrieval per Provider| GW
+    GW -->|Structured Logs| LP
+    GW -->|Telemetry| MB_met
+    GW -->|Usage Records| CA
