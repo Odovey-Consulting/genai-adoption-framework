@@ -2,6 +2,8 @@
 
 The GenAI Adoption Framework (GAF) is a vendor-agnostic, theoretical framework for planning, governing, and scaling generative AI adoption across the enterprise. It provides a structured approach to the organizational, architectural, and security concerns that emerge when generative AI moves from experimentation to production. GAF defines five stacking capability layers, three maturity stages, and a set of cross-cutting concerns that together form a comprehensive blueprint for responsible, secure, and operationally sound GenAI adoption. The framework is intentionally free of product or vendor references; it describes *what* an enterprise needs, not *how* to procure it.
 
+> **Short on time?** Read the [TL;DR](TLDR.md) for a single-page summary of the entire framework — layers, stages, principles, and where to start by role.
+
 ---
 
 ## Architecture: The Five Stacking Layers
@@ -72,6 +74,7 @@ GAF defines three maturity stages that describe an organization's progression fr
 
 | Section | Path |
 |---------|------|
+| TL;DR (single-page summary) | [TLDR.md](TLDR.md) |
 | Framework Overview | [docs/overview.md](docs/overview.md) |
 | Design Principles | [docs/principles.md](docs/principles.md) |
 | Glossary | [docs/glossary.md](docs/glossary.md) |
